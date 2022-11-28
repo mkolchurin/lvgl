@@ -80,7 +80,6 @@ void lv_draw_stm32_dma2d_init(void)
 #else
 # warning "LVGL can't enable the clock of DMA2D"
 #endif
-
     /*Wait for hardware access to complete*/
     __asm volatile("DSB\n");
 

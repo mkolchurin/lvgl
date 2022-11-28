@@ -8,6 +8,11 @@ if(CONFIG_LVGL)
 set(ZEPHYR_CURRENT_LIBRARY lvgl)
 include_directories(${ZEPHYR_BASE}/lib/gui/lvgl)
 zephyr_include_directories(../src/)
+zephyr_include_directories(../demos/)
+
+# include_directories(${ZEPHYR_BASE}/lib/gui/Arm-2D/Library/Include/)
+# zephyr_include_directories(../../Arm-2D/Library/Source/)
+# zephyr_include_directories(../../Arm-2D/Library/Include/)
 
 zephyr_interface_library_named(LVGL)
 
@@ -17,6 +22,24 @@ zephyr_compile_definitions(LV_CONF_PATH=../zephyr/lv_conf.h)
 zephyr_library()
 
 zephyr_library_sources(
+    # ../../Arm-2D/Library/Source/__arm_2d_core.c
+    # ../../Arm-2D/Library/Source/__arm_2d_tile.c
+    # ../../Arm-2D/Library/Source/arm_2d_alpha_blending.c
+    # ../../Arm-2D/Library/Source/arm_2d_async.c
+    # ../../Arm-2D/Library/Source/arm_2d_conversion.c
+    # ../../Arm-2D/Library/Source/arm_2d_draw.c
+    # ../../Arm-2D/Library/Source/arm_2d_transform.c
+    # ../../Arm-2D/Library/Source/arm_2d.c
+    ../demos/benchmark/assets/img_benchmark_cogwheel_alpha16.c
+    ../demos/benchmark/assets/img_benchmark_cogwheel_argb.c
+    ../demos/benchmark/assets/img_benchmark_cogwheel_chroma_keyed.c
+    ../demos/benchmark/assets/img_benchmark_cogwheel_indexed16.c
+    ../demos/benchmark/assets/img_benchmark_cogwheel_rgb.c
+    ../demos/benchmark/assets/img_benchmark_cogwheel_rgb565a8.c
+    ../demos/benchmark/assets/lv_font_bechmark_montserrat_12_compr_az.c.c
+    ../demos/benchmark/assets/lv_font_bechmark_montserrat_16_compr_az.c.c
+    ../demos/benchmark/assets/lv_font_bechmark_montserrat_28_compr_az.c.c
+    ../demos/benchmark/lv_demo_benchmark.c
     ../src/core/lv_disp.c
     ../src/core/lv_event.c
     ../src/core/lv_group.c

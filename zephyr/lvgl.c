@@ -47,9 +47,9 @@ static lv_disp_draw_buf_t disp_buf;
  * uint16_t * or uint32_t *, therefore buffer needs to be aligned accordingly to
  * prevent unaligned memory accesses.
  */
-static uint8_t buf0[BUFFER_SIZE] __aligned(4);
+/* __ccm_data_section */ /* __stm32_sdram1_section */ static uint8_t buf0[BUFFER_SIZE] __aligned(4);
 #ifdef CONFIG_LV_Z_DOUBLE_VDB
-static uint8_t buf1[BUFFER_SIZE] __aligned(4);
+/* __ccm_data_section */ /* __stm32_sdram1_section */ static uint8_t buf1[BUFFER_SIZE] __aligned(4);
 #endif
 
 #endif /* CONFIG_LV_Z_BUFFER_ALLOC_STATIC */
